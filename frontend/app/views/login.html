@@ -1,0 +1,50 @@
+<div class="login-panel panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Login</h3>
+  </div>
+  <div class="panel-body">
+    <form role="form" name="login" novalidate ng-submit="submit()">
+      <fieldset>
+        <div class="form-group">
+          <label for="email">
+            Email Address
+          </label>
+          <input id="email" class="form-control" name="email" placeholder="E-mail"
+                 type="email" autofocus="" ng-model="email" required>
+          <p class="help-block" ng-show="login.email.$dirty && register.email.$invalid">
+            <small>The email address is not valid.</small>
+          </p>
+        </div>
+        <div class="form-group">
+          <label for="password">
+            Password
+          </label>
+          <input id="password" class="form-control" name="password" placeholder="Password"
+                 type="password" ng-model="password" required>
+          <p class="help-block" ng-show="login.password.$dirty && register.password.$invalid">
+            <small>The password is required.</small>
+          </p>
+        </div>
+
+        <button ng-disabled="login.$invalid" class="btn btn-md btn-success" type="submit">
+          Login
+        </button>
+      </fieldset>
+    </form>
+  </div>
+  <hr/>
+
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <button ng-click="google()" class="btn btn-block btn-default" type="button">
+        GooglePlus
+      </button>
+    </div>
+  </div>
+  <div class="clearfix">&nbsp;</div>
+
+
+  <div class="panel-footer">
+    Don't have an account? <a ui-sref="register">Register for one</a>.
+  </div>
+</div>
